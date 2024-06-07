@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 
 public class SavingAccountTest {
 
+<<<<<<< HEAD
+=======
 
+//   тесты на add
 
     @Test
     public void shouldAddLessThanMaxBalance() {
@@ -16,7 +19,22 @@ public class SavingAccountTest {
                 5
         );
 
+>>>>>>> 4730258bc43a1f92941046fd2717eb1896d387b3
+
+
+<<<<<<< HEAD
+    @Test
+    public void shouldAddLessThanMaxBalance() {
+        SavingAccount account = new SavingAccount(
+                2_000,
+                1_000,
+                10_000,
+                5
+        );
+
         account.add(3_000);
+=======
+>>>>>>> 4730258bc43a1f92941046fd2717eb1896d387b3
 
         Assertions.assertEquals(2_000 + 3_000, account.getBalance());
     }
@@ -31,10 +49,16 @@ public class SavingAccountTest {
                 5
         );
 
+<<<<<<< HEAD
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             account.add(8_001);
         });
+=======
+        account.add(8_001);
+
+        Assertions.assertEquals(2_000, account.getBalance());
+>>>>>>> 4730258bc43a1f92941046fd2717eb1896d387b3
     }
 
     @Test
@@ -370,4 +394,6 @@ public class SavingAccountTest {
 
 
 }
+
+
 

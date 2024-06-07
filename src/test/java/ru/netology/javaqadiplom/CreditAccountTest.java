@@ -127,10 +127,12 @@ public class CreditAccountTest {
     @Test
     public void mustCalculateInterestOnNegativeBalance() {
         CreditAccount account = new CreditAccount(
-                -100,
                 0,
+                200,
                 15
         );
+
+        account.pay(100);
 
         int expected = -15;
         Assertions.assertEquals(-15, account.yearChange());

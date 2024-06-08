@@ -18,6 +18,7 @@ public class CreditAccountTest {
         Assertions.assertEquals(3_000, account.getBalance());
     }
 
+
     @Test
 
     public void shouldNotChangeTheBalanceIfTheValueIsIncorrect() {
@@ -154,4 +155,5 @@ public class CreditAccountTest {
 
 
     }
+
 }

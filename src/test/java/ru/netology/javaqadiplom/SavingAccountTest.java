@@ -7,6 +7,7 @@ public class SavingAccountTest {
 
 //   тесты на add
 
+
     @Test
     public void shouldAddLessThanMaxBalance() {
         SavingAccount account = new SavingAccount(
@@ -17,6 +18,7 @@ public class SavingAccountTest {
         );
 
         account.add(3_000);
+
 
         Assertions.assertEquals(2_000 + 3_000, account.getBalance());
     }
@@ -31,9 +33,11 @@ public class SavingAccountTest {
                 5
         );
 
-        account.add(8_001);
 
-        Assertions.assertEquals(2_000, account.getBalance());
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            account.add(8_001);
+        });
+
     }
 
     @Test
@@ -366,7 +370,6 @@ public class SavingAccountTest {
 
         Assertions.assertEquals(20, account.yearChange());
     }
-
 
 }
 

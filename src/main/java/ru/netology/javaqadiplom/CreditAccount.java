@@ -52,12 +52,13 @@ public class CreditAccount extends Account {
     public boolean pay(int amount) {
         if (amount <= 0) {
             return false;
-        }
-        if (balance - amount > -creditLimit) {
-            balance = balance - amount;
-            return true;
         } else {
-            return false;
+            if (balance - amount > -creditLimit) {
+                balance = balance - amount;
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 

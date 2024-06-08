@@ -18,9 +18,7 @@ public class CreditAccountTest {
         Assertions.assertEquals(3_000, account.getBalance());
     }
 
-
     @Test
-
     public void shouldNotChangeTheBalanceIfTheValueIsIncorrect() {
         CreditAccount account = new CreditAccount(
                 0,
@@ -97,10 +95,9 @@ public class CreditAccountTest {
         account.pay(1_000);
 
         Assertions.assertEquals(2_000, account.getBalance());
-     }
+    }
 
     @Test
-
     public void showBalanceAfterPurchaseExceedingBalance() {
         CreditAccount account = new CreditAccount(
                 0,
@@ -111,9 +108,8 @@ public class CreditAccountTest {
         account.add(3_000);
         account.pay(4_000);
 
-        Assertions.assertEquals(0, account.getBalance());
-
-     }
+        Assertions.assertEquals(3_000, account.getBalance());
+    }
 
     @Test
     public void shouldNotChangeTheBalanceIfThePurchaseValueIsIncorrect() {
@@ -131,10 +127,12 @@ public class CreditAccountTest {
     @Test
     public void mustCalculateInterestOnNegativeBalance() {
         CreditAccount account = new CreditAccount(
-                -100,
                 0,
+                200,
                 15
         );
+
+        account.pay(100);
 
         int expected = -15;
         Assertions.assertEquals(-15, account.yearChange());
@@ -151,7 +149,6 @@ public class CreditAccountTest {
 
         int expected = -15;
         Assertions.assertEquals(0, account.yearChange());
-
 
 
     }

@@ -19,6 +19,7 @@ public class CreditAccountTest {
     }
 
     @Test
+
     public void shouldNotChangeTheBalanceIfTheValueIsIncorrect() {
         CreditAccount account = new CreditAccount(
                 0,
@@ -98,6 +99,7 @@ public class CreditAccountTest {
      }
 
     @Test
+
     public void showBalanceAfterPurchaseExceedingBalance() {
         CreditAccount account = new CreditAccount(
                 0,
@@ -109,6 +111,7 @@ public class CreditAccountTest {
         account.pay(4_000);
 
         Assertions.assertEquals(0, account.getBalance());
+
      }
 
     @Test
@@ -147,6 +150,7 @@ public class CreditAccountTest {
 
         int expected = -15;
         Assertions.assertEquals(0, account.yearChange());
+
 
 
     }

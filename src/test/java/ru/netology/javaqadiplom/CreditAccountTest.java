@@ -95,7 +95,7 @@ public class CreditAccountTest {
         account.pay(1_000);
 
         Assertions.assertEquals(2_000, account.getBalance());
-     }
+    }
 
     @Test
     public void showBalanceAfterPurchaseExceedingBalance() {
@@ -109,7 +109,7 @@ public class CreditAccountTest {
         account.pay(4_000);
 
         Assertions.assertEquals(3_000, account.getBalance());
-     }
+    }
 
     @Test
     public void shouldNotChangeTheBalanceIfThePurchaseValueIsIncorrect() {
@@ -151,5 +151,6 @@ public class CreditAccountTest {
         Assertions.assertEquals(0, account.yearChange());
 
 
+        //
     }
 }

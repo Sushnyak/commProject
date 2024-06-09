@@ -372,7 +372,6 @@ public class SavingAccountTest {
         Assertions.assertEquals(20, account.yearChange());
     }
 
-
 }
 
 
